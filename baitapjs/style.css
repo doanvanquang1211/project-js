@@ -1,0 +1,53 @@
+p {
+    color: red;
+    font-size: 40px;
+    text-align: center;
+}
+
+.style {
+    text-align: center;
+}
+
+.style input {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+
+.style button {
+    color: red;
+    border: 1px solid orange;
+    border-radius: 2px;
+    background-color: orange;
+    width: 150px;
+    height: 20px;
+}
+
+/* so nguyen */
+
+.list {
+    text-align: center;
+}
+
+.list .center {
+    color: red;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.list input {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.list button {
+    width: 150px;
+    height: 20px;
+    color: red;
+    border: 1px solid orange;
+    border-radius: 2px;
+    background-color: orange;
+}
