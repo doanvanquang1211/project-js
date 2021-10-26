@@ -1,65 +1,125 @@
-function giaipt() {
-    var a = parseInt(document.getElementById('num1').value);
-    var b = parseInt(document.getElementById('num2').value);
-    var c = parseInt(document.getElementById('num3').value);
-    var delta;
-    delta = b * b - 4 * a * c;
 
-    var result;
-    if (delta < 0) {
-        result = 'Phuong trinh vo nghiem';
-    } else {
-        if (delta == 0) {
-            x = -b / (2 * a);
-            result = 'PT co nghiem' + x;
-        } else {
-            x1 = (-b + Math.sqrt(delta)) / (2 * a);
-            x2 = (-b - Math.sqrt(delta)) / (2 * a);
-            result = ' x1= ' + x1.toFixed(2) + 'va' + ' x2= ' + x2.toFixed(2);
+// // // bai 10
+function ParityallFunction() {
+    // let result5;
+    for (i = 2; i <= 9; i++) {
+        for (j = 1; j <= 10; j++) {
+            document.getElementById('num123').value += i + 'x' + j + '=' + (i * j) + '\n';
         }
+        document.getElementById('num123').value += '---------' + '\n'
     }
-    document.getElementById('ketqua').value = result;
+
 }
-// số nguyên
-function ktsonguyen() {
-    var result1;
-    var n = parseInt(document.getElementById('soN').value);
-    if (n < 2) {
-        result1 = 'khong phai so nguyen'
+
+// // // bai5
+
+function myFunction() {
+    var h = parseInt(document.getElementById('nhapN').value);
+    var total = 0;
+    for (k = 1; k <= h; k++) {
+        total = total + k;
     }
-    {
-        if (n == 2) {
-            result1 = 'so nguyen'
-        } else {
-            for (i = 2; i < n; i++) {
-                if (n % i == 0) {
-                    result1 = 'khong la so nguyen to'
-                    break
-                }
-                if (n % i != 0) {
-                    result1 = 'la so nguyen to'
-                }
+    document.getElementById('tong').value = total;
+}
+// // // bai 7
+
+function myisFunction() {
+    var number = parseInt(document.getElementById('num').value);
+    var tong = 0;
+    for (i = 1; i <= number; i += 2) {
+        tong = tong + i;
+    }
+    document.getElementById('ketqua4').value = tong;
+}
+// // bai4
+function checkprimesFunction(n) {
+
+    let flag = true;
+    if (n < 2) {
+        flag = false;
+    } else if (n === 2) {
+        flag = true;
+    } else if (n % 2 === 0) {
+        flag = false;
+    } else {
+        for (let index = 2; index < n; index++) {
+
+            if (n % index === 0) {
+
+                flag = false;
+                break;
+            } else {
+
+                flag = true;
             }
         }
     }
+    return flag
+}
+function myallFunction() {
 
-    document.getElementById('ketqua1').value = result1;
+    let n = parseInt(document.getElementById('number').value);
+    let a = ''
+    for (i = 1; i <= n; i++) {
+        let isCheck = checkprimesFunction(i)
+        console.log('isCheck', isCheck);
+        if (isCheck == true) {
+            console.log('i', i);
+            a = a + ', ' + i
+        }
+    }
+    console.log(a);
+    document.getElementById('kiemtra1').value = a;
+}
+// // bai 6
+
+function totalFunction() {
+    let variable = parseInt(document.getElementById('soA').value);
+    let sum = 0;
+    for (i = 1; i <= variable; i++) {
+        sum = sum + (i * i);
+    }
+    document.getElementById('total').value = sum;
+}
+// bai9
+function symmetryFunction() {
+    let n1 = parseInt(document.getElementById('soN1').value);
+    let check;
+    let mdx = 0;
+    let s = n1;
+    while (n1 > 0) {
+        mdx = mdx * 10 + n1 % 10;
+        n1 = Math.floor(n1 / 10);
+    }
+    console.log('n', n1);
+    console.log('mdx', mdx);
+    if (mdx == s) {
+        check = 'Yes'
+
+    } else {
+        check = 'No'
+    }
+    document.getElementById('symmetry').value = check;
+}
+// bai 9
+
+
+function ParityFunction() {
+    let variableall = parseInt(document.getElementById('soN2').value);
+    let result;
+    let m = 0;
+    while (variableall > 0) {
+        m = m * 10 + variableall % 10;
+        variableall = Math.floor(variableall / 10);
+        console.log('m', m);
+        if (m % 2 == 0) {
+            result = 'No'
+            break
+        } else {
+            result = 'Yes'
+        }
+    }
+    document.getElementById('Parity').value = result;
 }
 
 
-
-
-// if (a != 1 && a != 0) {
-//     if (a == 2) {
-//         b = 'số nguyên'
-//     } else {
-//         for (i = 2; i < a; i++) {
-//             if (a % i == 0) {
-//                 b = 'không phải số nguyên'
-//                 break
-//             }
-//             if (a % i != 0) {
-//                 b = 'số nguyên'
-//             }
-//         }
-//     }
